@@ -6,6 +6,12 @@ import "./InfoBox.css";
 import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import Checkbox from "@mui/material/Checkbox";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import Favorite from "@mui/icons-material/Favorite";
+import { red } from "@mui/material/colors";
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 export default function InfoBox({ info }) {
   const INIT_URL =
@@ -33,6 +39,7 @@ export default function InfoBox({ info }) {
             }
             title="green iguana"
           />
+
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {info.city}{" "}
@@ -59,6 +66,13 @@ export default function InfoBox({ info }) {
               </p>
             </Typography>
           </CardContent>
+          <div style={{ textAlign: "left" }}>
+            <Checkbox
+              {...label}
+              icon={<FavoriteBorder />}
+              checkedIcon={<Favorite sx={{ color: red[900] }} />}
+            />
+          </div>
         </Card>
       </div>
     </div>
